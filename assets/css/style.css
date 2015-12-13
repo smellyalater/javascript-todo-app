@@ -1,4 +1,15 @@
 body {
   background: #C9C4C4; }
 
+.todo-text {
+  width: 300px; }
+  .todo-text::-webkit-input-placeholder {
+    color: red; }
+  .todo-text:-moz-placeholder {
+    color: red; }
+  .todo-text::-moz-placeholder {
+    color: red; }
+  .todo-text:-ms-input-placeholder {
+    color: red; }
+
 /*# sourceMappingURL=style.css.map */

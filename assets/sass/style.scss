@@ -1,3 +1,26 @@
+// @mixin placeholder-text-color($text-color) {
+
+// }
+
+
 body {
   background: #C9C4C4;
+}
+
+.todo-text {
+  width: 300px;
+  
+//couldn't figure out how to do a mixin for a pseudo-selector
+    &::-webkit-input-placeholder {
+      color: red;
+    }
+    &:-moz-placeholder {
+      color:red;
+    }
+    &::-moz-placeholder {
+      color:red;
+    }
+    &:-ms-input-placeholder {
+      color: red;
+    }
 }

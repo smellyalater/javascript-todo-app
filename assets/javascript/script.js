@@ -25,7 +25,8 @@ function renderTodos() {
 
   for (var i = 0; i < todos.length; i++) {
     var todo = todos[i];
-    var checked = todo.complete ? 'checked' : ''
+    var checked = todo.complete ? 'checked' : '';
+
     $('.todos').append("<li class='todo' data-id=" + todo.id + "><label><input class='toggle-todo' type='checkbox' " + checked + "/> " + todo.text + "</label></li>");
   }
 }
@@ -61,6 +62,14 @@ $(document).ready(function() {
     event.preventDefault();
 
     var text = $('.todo-text').val();
+
+    if (text.length <= 0) {
+      $('input.todo-text').attr('placeholder', 'Please enter something in here.');
+      return false;
+    } else {
+      return true;
+    }
+    // http://stackoverflow.com/a/3937551
 
     var newTodo = {
       id: incrementId(),
