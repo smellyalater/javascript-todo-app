@@ -9,7 +9,7 @@ body {
 
 .todo-text {
   width: 300px;
-  
+
 //couldn't figure out how to do a mixin for a pseudo-selector
     &::-webkit-input-placeholder {
       color: red;
