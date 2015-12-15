@@ -29,6 +29,8 @@ function renderTodos() {
 
     $('.todos').append("<li class='todo' data-id=" + todo.id + "><label><input class='toggle-todo' type='checkbox' " + checked + "/> " + todo.text + "</label></li>");
 
+
+
     //clears input on form submit
     $('input[type="text"], textarea').val('');
     //http://stackoverflow.com/a/14589253
@@ -57,13 +59,14 @@ $(document).ready(function() {
     var id = $(event.target).parent().parent().data('id');
     var todo = findById(id);
 
-  // $(document).on('change', 'input[type="checkbox"]' function {
-  //if (this.checked) {
+// this was working in the console...but can't get it to work now.
+//     $('[type="checkbox"]:not(:checked)').click(function(e){
+//       $(this).parent().toggleClass('completed-todo');
+//     event.stopPropagation()
+//     });
 
-//});
 
     todo.complete = event.target.checked;
-
 
     renderTodos();
   });
@@ -74,8 +77,7 @@ $(document).ready(function() {
     var text = $('.todo-text').val();
 
 
-/****** js form validation *****/
-//http://stackoverflow.com/a/3937551
+//js form validation
     if (text.length <= 0) {
       $('input.todo-text').attr('placeholder', 'Todo cannot be empty.');
       return false;
@@ -83,6 +85,53 @@ $(document).ready(function() {
       $('input.todo-text').attr('placeholder', '');
       // return true;
     }
+//http://stackoverflow.com/a/3937551
+
+
+//   $(input:checked).on('change', 'input[type="checkbox"]' function {
+//   if (this.checked) {
+//
+// });
+
+
+// if $('input:checked') {
+//   $(this).parent().css('text-decoration', 'line-through');
+// }
+
+// $('input[type="checkbox"]:checked').change(function() {
+//     console.log('hey');
+// });
+
+// if ( 'input:checked' ) {
+//   //$( 'li.todo input' ).toggleClass('amc');
+//   console.log('hey');
+// }
+
+
+// $('input.toggle-todo:checked').each(function() {
+//     $(this.checked).parent().toggleClass('completed-todo');
+// });
+
+// if ( $('[type="checkbox"]').is('checked') ), function(e){
+//     $(this).closest('label').toggleClass("completed-todo");
+// event.stopPropagation();
+// });
+
+// $('[type="checkbox"]:checked').parent().toggleClass('completed-todo');
+
+
+// $('input:not(:checked)').on('change', function(e){
+//   $(this).parent().toggleClass('completed-todo');
+// event.stopPropagation()
+// });
+// $('input:checked').on('change', function(e){
+//   $(this).parent().toggleClass('completed-todo');
+// event.stopPropagation()
+// });
+
+
+
+
 
     var newTodo = {
       id: incrementId(),

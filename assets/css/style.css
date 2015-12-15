@@ -12,4 +12,7 @@ body {
   .todo-text:-ms-input-placeholder {
     color: red; }
 
+.completed-todo {
+  text-decoration: line-through; }
+
 /*# sourceMappingURL=style.css.map */
